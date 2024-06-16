@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#@CRACKWARS_DANGER
+#@dakkucheats
 
 import telebot
 import subprocess
@@ -8,10 +8,10 @@ import datetime
 import os
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7223592524:AAEnoHb8qMGA97jxLz31cxFyqGylerlbnxU')
+bot = telebot.TeleBot('7244429853:AAFD_sdfSY5gwGnj5JxmNvVE_dqeKtM7OIg')
 
 # Admin user IDs
-admin_id = ["2111548216", "6682104026"]
+admin_id = ["1753312395", "6682104026"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -246,7 +246,7 @@ def handle_bgmi(message):
                 subprocess.run(full_command, shell=True)
                 response = f"BGMI Attack Finished. Target: {target} Port: {port} Time: {time}"
         else:
-            response = "Usage :- /bgmi <target> <port> <time>\n@dakkucheats"  # Updated command syntax
+            response = "Welcome to my Bot Usage :- /bgmi <target> <port> <time>\n@dakkucheats"  # Updated command syntax
     else:
         response = "You Are Not Authorized To Use This Command.\n@dakkucheats"
 
@@ -278,11 +278,10 @@ def show_command_logs(message):
 @bot.message_handler(commands=['help'])
 def show_help(message):
     help_text = '''Available commands:
- /bgmi : Method For Bgmi Servers. 
+ /bgmi : to attack For Bgmi Servers. 
  /rules : Please Check Before Use !!.
  /mylogs : To Check Your Recents Attacks.
- /plan : Checkout Our Botnet Rates.
-
+ /plan : Checkout Our Price List.
  To See Admin Commands:
  /admincmd : Shows All Admin Commands.
  @dakkucheats
@@ -321,14 +320,14 @@ def welcome_plan(message):
     response = f'''{user_name}, Brother Only 1 Plan Is Powerfull Then Any Other Ddos !!:
 
 Vip :
--> Attack Time : 200 (S)
-> After Attack Limit : 2 Min
--> Concurrents Attack : 300
+-> Attack Time : 240 (S)
+> After Attack Limit : 5 Min
+-> Concurrents Attack : 3000
 
 Pr-ice List:
-Day-->200 Rs
-Week-->900 Rs
-Month-->1600 Rs
+Day 200 Rs
+Week 900 Rs
+Month 1600 Rs
 @dakkucheats
 '''
     bot.reply_to(message, response)
