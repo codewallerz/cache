@@ -3,12 +3,11 @@
 
 import telebot
 import subprocess
-import requests
 import datetime
 import os
 
 # Insert your Telegram bot token here
-bot = telebot.TeleBot('7244429853:AAFD_sdfSY5gwGnj5JxmNvVE_dqeKtM7OIg')
+bot = telebot.TeleBot('YOUR_BOT_TOKEN')
 
 # Admin user IDs
 admin_id = {"6682104026", "1753312395"}
@@ -179,10 +178,10 @@ def welcome_plan(message):
     user_name = message.from_user.first_name
     response = f'''🌐 {user_name}, We Have The Most Powerful DDoS Plan For You! 🌐:
 
-
- ⏱️ Attack Time: 240 seconds
- 🕒 After Attack Limit: 4 Minutes
- 🚀 Concurrent Attacks: 300
+VIP Plan:
+-> ⏱️ Attack Time: 200 seconds
+-> 🕒 After Attack Limit: 2 Minutes
+-> 🚀 Concurrent Attacks: 300
 
 💰 Price List:
 📅 Day: ₹200
@@ -226,6 +225,50 @@ def broadcast_message(message):
             response = "📣 Broadcast Message Sent Successfully To All Users."
         else:
             response = "📣 Please Provide A Message To Broadcast."
+    else:
+        response = "🚫 Only Admin Can Run This Command."
+
+    bot.reply_to(message, response)
+
+@bot.message_handler(commands=['add'])
+def add_user(message):
+    user_id = str(message.chat.id)
+    if user_id in admin_id:
+        command = message.text.split()
+        if len(command) > 1:
+            user_to_add = command[1]
+            if user_to_add not in allowed_user_ids:
+                allowed_user_ids.append(user_to_add)
+                with open(USER_FILE, "a") as file:
+                    file.write(f"{user_to_add}\n")
+                response = f"✅ User {user_to_add} Added Successfully."
+            else:
+                response = "🚫 User already exists."
+        else:
+            response = "🚫 Please specify a user ID to add."
+    else:
+        response = "🚫 Only Admin Can Run This Command."
+
+    bot.reply_to(message, response)
+
+@bot.message_handler(commands=['remove'])
+def remove_user(message):
+    user_id = str(message.chat.id)
+    if user_id in admin_id:
+        command = message.text.split()
+        if len(command) > 1:
+            user_to_remove = command[1]
+            if user_to_remove in allowed_user_ids:
+                allowed_user_ids.remove(user_to_remove)
+                with open(USER_FILE, "w") as file:
+                    for user_id in allowed_user_ids:
+                        file.write(f"{user_id}\n")
+                response = f"✅ User {user_to_remove} removed successfully."
+            else:
+                response = f"🚫 User {user_to_remove} not found in the list."
+        else:
+            response = '''🚫 Please Specify A User ID to Remove. 
+ Usage: /remove <userid>'''
     else:
         response = "🚫 Only Admin Can Run This Command."
 
