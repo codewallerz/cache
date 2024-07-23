@@ -199,7 +199,7 @@ def start_attack_reply(message, target, port, time):
     user_info = message.from_user
     username = user_info.username if user_info.username else user_info.first_name
     
-    response = f"🙍{username}, 🚀𝐀𝐓𝐓𝐀𝐂𝐊 𝐒𝐓𝐀𝐑𝐓𝐄𝐃 🚀 WAIT FOR SERVER UNFREEZ.\n\n🎯𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n🚪𝐏𝐨𝐫𝐭: {port}\n⏳𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n🛡️𝐌𝐞𝐭𝐡𝐨𝐝: BGMI-VIP\n@dakkucheats"
+    response = f"🙍{username}, 🚀𝐀𝐓𝐓𝐀𝐂𝐊 𝐒𝐓𝐀𝐑𝐓𝐄𝐃 🚀 WAIT FOR SERVER UNFREEZ.\n\n🎯𝐓𝐚𝐫𝐠𝐞𝐭: {target}\n🚪𝐏𝐨𝐫𝐭: {port}\n⏳𝐓𝐢𝐦𝐞: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n🛡️𝐌𝐞𝐭𝐡𝐨𝐝: BGMI-VIP\n"
     bot.reply_to(message, response)
 
 # Dictionary to store the last time each user ran the /bgmi command
@@ -237,9 +237,9 @@ def handle_bgmi(message):
                 subprocess.run(full_command, shell=True)
                 response = f" 🎮BGMI Attack Finished! 🎮.\n\n🎯Target: {target}\n🚪Port: {port}\n⏳Time: {time}"
         else:
-            response = "✅Usage :- /bgmi <target> <port> <time>\n@dakkucheats"
+            response = "✅Usage :- /bgmi <target> <port> <time>\n"
     else:
-        response = "🚫You Are Not Authorized To Use This Command🚫.\n@dakkucheats"
+        response = "🚫You Are Not Authorized To Use This Command🚫.\n"
 
     bot.reply_to(message, response)
 
@@ -273,7 +273,7 @@ def show_help(message):
 
  To See Admin Commands:
  /admincmd : Shows All Admin Commands.
- @dakkucheats
+
 '''
     for handler in bot.message_handlers:
         if hasattr(handler, 'commands'):
@@ -288,7 +288,7 @@ def show_help(message):
 @bot.message_handler(commands=['start'])
 def welcome_start(message):
     user_name = message.from_user.first_name
-    response = f"🎉Welcome to Your Home, {user_name}!🎉 \nFeel Free to Explore.Try To Run This Command : /help\n\n🎊Welcome To The World's Best Ddos Bot🤖\n@dakkucheats"
+    response = f"🎉Welcome to Your Home, {user_name}!🎉 \nFeel Free to Explore.Try To Run This Command : /help\n\n🎊Welcome To The World's Best Ddos Bot🤖\n"
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
@@ -299,7 +299,7 @@ def welcome_rules(message):
 1. 🚫Dont Run Too Many Attacks !! Cause A Ban From Bot
 2. ⚠️Dont Run 2 Attacks At Same Time Becz If U Then U Got Banned From Bot. 
 3. 🧐We Daily Checks The Logs So Follow these rules to avoid Ban!!
-@dakkucheats'''
+'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['plan'])
@@ -313,10 +313,9 @@ Vip :
 -> 💣Concurrents Attack : 300
 
 💸Price List:
-1️⃣Day-->200 Rs
+1️⃣Day--> 300 Rs
 1️⃣Week-->900 Rs
-1️⃣Month-->1600 Rs
-@dakkucheats
+1️⃣Month--> 2000 Rs
 '''
     bot.reply_to(message, response)
 
@@ -333,7 +332,7 @@ def welcome_admincmd(message):
 /clearlogs : Clear The Logs File.
 /startsub <userId> <days> : Start a subscription for a user.
 /endsub <userId> : End a user's subscription.
-@dakkucheats
+
 '''
     bot.reply_to(message, response)
 
